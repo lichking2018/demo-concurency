@@ -1,7 +1,7 @@
 #忽略编译目录target
 .idea/
 .mvn/
-.target/
+target/
 *.iml
 mvnw
 *.cmd
