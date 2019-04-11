@@ -19,7 +19,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 @ThreadSafe
 public class ConcurrencyTest1 {
 
-    public static int clientTotal = 5000;
+    public static int clientTotal = 50001;
 
     public static int threadTotal = 200;
 
@@ -45,7 +45,7 @@ public class ConcurrencyTest1 {
                 countDownLatch.countDown();
             });
         }
-
+        //阻塞主线程，当countDownLatch的值变为0后，主线程继续执行
         countDownLatch.await();
         executorService.shutdown();
         System.out.println("count:"+count.get());
